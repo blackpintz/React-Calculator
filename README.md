@@ -6,7 +6,9 @@ The project builds  a calculator for Math-magicians Inc using create-react-app. 
 
 ### Note
 
-I downloaded all eslint packages as regular dependencies because I had trouble with heroku.
+I downloaded all eslint packages as regular dependencies to solve the following error in the heroku application.
+
+![screenshot](deploy.png)
 
 ## Built with
 
