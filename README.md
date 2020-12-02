@@ -2,13 +2,8 @@
 
 ## Description
 
-The project builds  a calculator for Math-magicians Inc using create-react-app. In this milestone, I set up the basic structure and tooling for the project.
+The project builds  a calculator for Math-magicians Inc using create-react-app. In this milestone, I set up the basic React components which will compose my whole calculator.
 
-### Note
-
-I downloaded all eslint packages as regular dependencies to solve the following error in the heroku application.
-
-![screenshot](deploy.png)
 
 ## Built with
 
