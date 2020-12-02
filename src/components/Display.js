@@ -15,7 +15,7 @@ Display.propTypes = {
 };
 
 Display.defaultProps = {
-  result: 'no value',
+  result: '0',
 };
 
 export default Display;
