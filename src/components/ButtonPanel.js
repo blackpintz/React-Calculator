@@ -9,13 +9,13 @@ function ButtonPanel() {
   const group4 = ['1', '2', '3', '+'];
   const group5 = ['0', '.', '='];
   return (
-    <React.Fragment>
+    <>
       <Group group={group1} />
       <Group group={group2} />
       <Group group={group3} />
       <Group group={group4} />
       <Group group={group5} />
-    </React.Fragment>
+    </>
   );
 }
 

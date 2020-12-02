@@ -6,18 +6,18 @@ import '../App.css';
 
 function Group({ group }) {
   return (
-    <React.Fragment>
+    <>
       <div className="group">
         {group.map(btn => (
           <Button key={uuidv4()} name={btn} />
         ))}
       </div>
-    </React.Fragment>
+    </>
   );
 }
 
 Group.propTypes = {
-  group: PropTypes.array,
+  group: PropTypes.arrayOf(PropTypes.string),
 };
 
 Group.defaultProps = {
