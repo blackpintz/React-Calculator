@@ -17,6 +17,10 @@
     "rules": {
       "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
       "react/react-in-jsx-scope": "off",
+      "react/jsx-fragments": "off",
+      "react/jsx-indent": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "indent": "off",
       "import/no-unresolved": "off",
       "import/no-cycle": "off",
       "no-shadow": "off",
