@@ -19,6 +19,8 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "import/no-cycle": "off",
+      "no-unused-vars": "off",
+      "no-param-reassign": "off",
       "no-shadow": "off",
       "arrow-parens": ["error", "as-needed"]
     },
