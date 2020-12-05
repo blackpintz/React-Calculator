@@ -4,6 +4,7 @@ import ButtonPanel from './ButtonPanel';
 import Calculator from '../logic/calculate';
 
 function App() {
+  console.log(Calculator({ total: '10', next: null, operation: '+' }, '='));
   return (
     <>
       <Display />

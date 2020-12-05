@@ -2,7 +2,7 @@ import Big from 'big.js';
 
 export default (numOne, numTwo, operation) => {
   const firstNum = Big(numOne);
-  const secondNum = Big(numTwo);
+  const secondNum = numTwo === null ? '0' : Big(numTwo);
   let total;
   switch (operation) {
     case '+':
@@ -21,6 +21,7 @@ export default (numOne, numTwo, operation) => {
       total = firstNum.div(100);
       break;
     default:
+      total = firstNum;
       break;
   }
   return total;
