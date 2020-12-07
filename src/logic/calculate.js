@@ -29,12 +29,18 @@ export default (data = { total: null, next: null, operation: null }, btn) => {
       else newData = { ...data, total: data.total === null ? '.' : `${data.total}.` };
       break;
     case '=':
+      newData = { ...data, total: data.total === null ? 0 : operate(total, next, operation) };
+      break;
     case '+':
     case '-':
     case '*':
     case '/':
     case '%':
-      newData = { ...data, total: data.total === null ? 0 : operate(total, next, operation) };
+      if (operation === null) {
+        newData = { ...data, total: data.total === null ? 0 : operate(total, next, btn) };
+      } else {
+        newData = { ...data, total: data.total === null ? 0 : operate(total, next, operation) };
+      }
       break;
     default:
       if (data.operation !== null && data.total !== null) newData = { ...data, next: data.next === null ? `${btn}` : `${data.next}${btn}` };
