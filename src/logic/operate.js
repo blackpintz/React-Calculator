@@ -12,7 +12,11 @@ export default (numOne, numTwo, operation) => {
       total = firstNum.minus(secondNum);
       break;
     case '/':
-      total = firstNum.div(secondNum);
+      if (numTwo === '0' || numTwo === 0 || secondNum === '0') {
+        total = 'Infinity';
+      } else {
+        total = firstNum.div(secondNum);
+      }
       break;
     case '*':
       total = firstNum.times(secondNum);
