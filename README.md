@@ -2,7 +2,7 @@
 
 ## Description
 
-The project builds  a calculator for Math-magicians Inc using create-react-app. In this milestone, I set up the basic React components which will compose my whole calculator.
+The project builds  a calculator for Math-magicians Inc using create-react-app. In this milestone, I implement Javascript modules responsible for all the calculations.
 
 
 ## Built with
