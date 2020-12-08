@@ -24,27 +24,32 @@ export default (data = { total: null, next: null, operation: null }, btn) => {
         ...data, total: null, next: null, operation: null,
       };
       break;
-    case '.':
-      if (data.operation !== null && data.total !== null) newData = { ...data, next: data.next === null ? '.' : `${data.next}.` };
-      else newData = { ...data, total: data.total === null ? '.' : `${data.total}.` };
-      break;
     case '=':
-      newData = { ...data, total: data.total === null ? 0 : operate(total, next, operation) };
+      newData = { ...data, total: data.total === null ? total : operate(total, next, operation) };
       break;
     case '+':
     case '-':
     case '*':
     case '/':
+      newData = { ...data, operation: data.total !== null ? btn : null };
+      break;
     case '%':
-      if (operation === null) {
-        newData = { ...data, total: data.total === null ? 0 : operate(total, next, btn) };
+      if (data.next === null) {
+        const result = operate(total, next, operation);
+        newData = { ...data, total: data.total !== null ? result.c : null };
       } else {
-        newData = { ...data, total: data.total === null ? 0 : operate(total, next, operation) };
+        const result = operate(total, next, operation);
+        newData = { ...data, next: result.c };
       }
       break;
+    case '.':
+      if (data.operation !== null && data.total !== null) newData = { ...data, next: next === null ? next : `${next}.` };
+      else newData = { ...data, total: total === null ? total : `${data.total}.` };
+      break;
     default:
-      if (data.operation !== null && data.total !== null) newData = { ...data, next: data.next === null ? `${btn}` : `${data.next}${btn}` };
-      else newData = { ...data, total: data.total === null ? `${btn}` : `${data.total}${btn}` };
+      if (data.operation !== null && data.total !== null) {
+        newData = { ...data, next: data.next === null ? btn : data.next + btn };
+      } else newData = { ...data, total: data.total === null ? btn : data.total + btn };
       break;
   }
 

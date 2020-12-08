@@ -28,5 +28,6 @@ export default (numOne, numTwo, operation) => {
       total = firstNum;
       break;
   }
+  console.log(total);
   return total;
 };

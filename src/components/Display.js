@@ -5,17 +5,17 @@ const Display = ({ result }) => (
   <>
     <h1>
       Display:
-      { result.next }
+      { result}
     </h1>
   </>
 );
 
 Display.propTypes = {
-  result: PropTypes.object,
+  result: PropTypes.string,
 };
 
 Display.defaultProps = {
-  result: {},
+  result: '0',
 };
 
 export default Display;

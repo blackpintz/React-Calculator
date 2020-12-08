@@ -15,15 +15,40 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = name => { console.log(`You clicked ${name}.`); };
+  handleClick = name => {
+    const { total, next, operation } = this.state;
+    const result = Calculator({ total, next, operation }, name);
+    switch (name) {
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        this.setState({ ...result });
+        break;
+      case 'AC':
+        this.setState({ ...result });
+        break;
+      case '+/-':
+        this.setState({ ...result });
+        break;
+      case '=':
+        this.setState(state => ({
+          total: state.operation === null || state.next === null ? state.total : result.total.c,
+          operation: null,
+          next: null,
+        }));
+        break;
+      default:
+        this.setState({ ...result });
+        break;
+    }
+  };
 
   render() {
-    const { total, next, operation } = this.state;
-    const result = Calculator({ total: 2, next: 2, operation: '*' }, '+');
-    console.log(result);
+    const { next } = this.state;
     return (
       <>
-        <Display result={result} />
+        <Display result={next === null ? '0' : next.toString()} />
         <ButtonPanel clickBtn={this.handleClick} />
       </>
     );
