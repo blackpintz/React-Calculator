@@ -2,7 +2,7 @@
 
 ## Description
 
-The project builds  a calculator for Math-magicians Inc using create-react-app. In this milestone, I tied the calculations module with the components and added the interaction to the buttons using a handleClick function.
+The project builds  a calculator for Math-magicians Inc using create-react-app. In this milestone, I tied the calculations module with the components and added the interaction to the buttons.
 
 
 ## Built with
