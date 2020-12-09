@@ -22,12 +22,12 @@ export default (numOne, numTwo, operation) => {
       total = firstNum.times(secondNum);
       break;
     case '%':
-      total = firstNum.div(100);
+      total = numOne / 100;
       break;
     default:
       total = firstNum;
       break;
   }
-  console.log(total);
-  return total;
+  console.log(total.toPrecision());
+  return total.toPrecision();
 };

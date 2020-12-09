@@ -25,7 +25,7 @@ export default (data = { total: null, next: null, operation: null }, btn) => {
       };
       break;
     case '=':
-      newData = { ...data, total: data.total === null ? total : operate(total, next, operation) };
+      newData = { ...data, total: total === null ? total : operate(total, next, operation) };
       break;
     case '+':
     case '-':
@@ -35,21 +35,19 @@ export default (data = { total: null, next: null, operation: null }, btn) => {
       break;
     case '%':
       if (data.next === null) {
-        const result = operate(total, next, operation);
-        newData = { ...data, total: data.total !== null ? result.c : null };
+        newData = { ...data, total: total !== null ? total / 100 : null };
       } else {
-        const result = operate(total, next, operation);
-        newData = { ...data, next: result.c };
+        newData = { ...data, next: next / 100 };
       }
       break;
     case '.':
-      if (data.operation !== null && data.total !== null) newData = { ...data, next: next === null ? next : `${next}.` };
-      else newData = { ...data, total: total === null ? total : `${data.total}.` };
+      if (operation !== null && total !== null) newData = { ...data, next: next === null ? next : `${next}.` };
+      else newData = { ...data, total: total === null ? total : `${total}.` };
       break;
     default:
-      if (data.operation !== null && data.total !== null) {
-        newData = { ...data, next: data.next === null ? btn : data.next + btn };
-      } else newData = { ...data, total: data.total === null ? btn : data.total + btn };
+      if (operation !== null && total !== null) {
+        newData = { ...data, next: next === null ? btn : next + btn };
+      } else newData = { ...data, total: total === null ? btn : total + btn };
       break;
   }
 

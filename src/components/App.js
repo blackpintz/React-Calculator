@@ -33,7 +33,7 @@ class App extends Component {
         break;
       case '=':
         this.setState(state => ({
-          total: state.operation === null || state.next === null ? state.total : result.total.c,
+          total: state.operation === null || state.next === null ? state.total : result.total,
           operation: null,
           next: null,
         }));
