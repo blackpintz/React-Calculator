@@ -33,7 +33,7 @@ class App extends Component {
       case '*':
       case '/':
         this.setState(state => ({
-          ...result, total: state.display === '0' ? total : state.display, operation: name,
+          ...result, total: state.display === '0' || state.display === 'syntax error' ? total : state.display, operation: state.display === 'syntax error' ? operation : name,
         }));
         break;
       case 'AC':
