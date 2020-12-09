@@ -28,5 +28,5 @@ export default (numOne, numTwo, operation) => {
       total = firstNum;
       break;
   }
-  return total === 'Infinity' ? 0 : total.toPrecision();
+  return total === 'Infinity' ? 'syntax error' : total.toPrecision();
 };

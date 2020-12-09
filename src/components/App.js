@@ -11,6 +11,7 @@ class App extends Component {
       total: null,
       next: null,
       operation: null,
+      display: '0',
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -21,22 +22,34 @@ class App extends Component {
     switch (name) {
       case '=':
         this.setState(state => ({
-          total: state.operation === null || state.next === null ? state.total : result.total,
+          display: state.operation === null || state.next === null ? state.total : result.total,
           operation: null,
           next: null,
+          total: null,
         }));
         break;
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        this.setState(state => ({
+          ...result, total: state.display === '0' ? total : state.display, operation: name,
+        }));
+        break;
+      case 'AC':
+        this.setState({ ...result, display: '0' });
+        break;
       default:
-        this.setState({ ...result });
+        this.setState({ ...result, display: '0' });
         break;
     }
   };
 
   render() {
-    const { next, total = 0 } = this.state;
+    const { next, total, display } = this.state;
     return (
       <>
-        <Display result={next === null ? total : next} />
+        <Display result={next === null ? total : next} display={display} />
         <ButtonPanel clickBtn={this.handleClick} />
       </>
     );
