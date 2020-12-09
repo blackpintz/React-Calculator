@@ -28,6 +28,5 @@ export default (numOne, numTwo, operation) => {
       total = firstNum;
       break;
   }
-  console.log(total.toPrecision());
-  return total.toPrecision();
+  return total === 'Infinity' ? 0 : total.toPrecision();
 };

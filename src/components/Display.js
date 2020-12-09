@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 const Display = ({ result }) => (
   <>
     <h1>
-      Display:
-      { result}
+      {result === null ? '0' : result }
     </h1>
   </>
 );
 
 Display.propTypes = {
-  result: PropTypes.string,
+  result: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
 Display.defaultProps = {

@@ -19,18 +19,6 @@ class App extends Component {
     const { total, next, operation } = this.state;
     const result = Calculator({ total, next, operation }, name);
     switch (name) {
-      case '+':
-      case '-':
-      case '*':
-      case '/':
-        this.setState({ ...result });
-        break;
-      case 'AC':
-        this.setState({ ...result });
-        break;
-      case '+/-':
-        this.setState({ ...result });
-        break;
       case '=':
         this.setState(state => ({
           total: state.operation === null || state.next === null ? state.total : result.total,
@@ -45,10 +33,10 @@ class App extends Component {
   };
 
   render() {
-    const { next } = this.state;
+    const { next, total = 0 } = this.state;
     return (
       <>
-        <Display result={next === null ? '0' : next.toString()} />
+        <Display result={next === null ? total : next} />
         <ButtonPanel clickBtn={this.handleClick} />
       </>
     );
