@@ -41,8 +41,11 @@ export default (data = { total: null, next: null, operation: null }, btn) => {
       }
       break;
     case '.':
-      if (operation !== null && total !== null) newData = { ...data, next: next === null ? next : `${next}.` };
-      else newData = { ...data, total: total === null ? total : `${total}.` };
+      if (operation !== null && total !== null) {
+        newData = { ...data, next: next === null || next.includes('.') ? next : next + btn };
+      } else {
+        newData = { ...data, total: total === null || total.includes('.') ? total : total + btn };
+      }
       break;
     default:
       if (operation !== null && total !== null) {
