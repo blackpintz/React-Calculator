@@ -22,11 +22,11 @@ export default (numOne, numTwo, operation) => {
       total = firstNum.times(secondNum);
       break;
     case '%':
-      total = firstNum.div(100);
+      total = numOne / 100;
       break;
     default:
       total = firstNum;
       break;
   }
-  return total;
+  return total === 'Infinity' ? 'syntax error' : total.toPrecision();
 };

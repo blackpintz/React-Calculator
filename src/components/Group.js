@@ -4,12 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 import Button from './Button';
 import '../App.css';
 
-function Group({ group }) {
+function Group({ group, btnPress }) {
   return (
     <>
       <div className="group">
         {group.map(btn => (
-          <Button key={uuidv4()} name={btn} />
+          <Button key={uuidv4()} name={btn} btnPress={btnPress} />
         ))}
       </div>
     </>
@@ -18,10 +18,12 @@ function Group({ group }) {
 
 Group.propTypes = {
   group: PropTypes.arrayOf(PropTypes.string),
+  btnPress: PropTypes.func,
 };
 
 Group.defaultProps = {
   group: 'no value',
+  btnPress(name) { return name; },
 };
 
 export default Group;
