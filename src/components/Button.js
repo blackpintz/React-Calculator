@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 function Button({ name, btnPress }) {
+  const Button = styled.button`
+  &:last-child {
+    background-color: orange;
+  }
+`;
   return (
     <>
-      <button type="button" onClick={() => btnPress(name)}>{name}</button>
+      <Button type="button" className="button" onClick={() => btnPress(name)}>{name}</Button>
     </>
   );
 }

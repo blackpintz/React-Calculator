@@ -1,11 +1,43 @@
 .App {
-  text-align: center;
+  display: flex;
+  width: 700px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-body {
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.Display {
+  background-color: lightgray;
+  color: #fff;
+  width: 700px;
+  font-weight: bold;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 
 .group {
   display: flex;
-  width: 10%;
-  justify-content: space-between;
+  width: 700px;
+  height: 100px;
+}
+
+.button {
+  width: 25%;
+  font-size: 20px;
+}
+
+.group:last-child .button:first-child {
+  width: 50%;
+  font-size: 20px;
 }
 
 .App-logo {

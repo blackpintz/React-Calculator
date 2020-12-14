@@ -11,11 +11,13 @@ function ButtonPanel({ clickBtn }) {
   const group5 = ['0', '.', '='];
   return (
     <>
-      <Group group={group1} btnPress={clickBtn} />
-      <Group group={group2} btnPress={clickBtn} />
-      <Group group={group3} btnPress={clickBtn} />
-      <Group group={group4} btnPress={clickBtn} />
-      <Group group={group5} btnPress={clickBtn} />
+      <div className="App">
+        <Group group={group1} btnPress={clickBtn} />
+        <Group group={group2} btnPress={clickBtn} />
+        <Group group={group3} btnPress={clickBtn} />
+        <Group group={group4} btnPress={clickBtn} />
+        <Group group={group5} btnPress={clickBtn} />
+      </div>
     </>
   );
 }

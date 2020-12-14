@@ -48,10 +48,10 @@ class App extends Component {
   render() {
     const { next, total, display } = this.state;
     return (
-      <>
+      <div className='calc-body'>
         <Display result={next === null ? total : next} display={display} />
         <ButtonPanel clickBtn={this.handleClick} />
-      </>
+      </div>
     );
   }
 }
