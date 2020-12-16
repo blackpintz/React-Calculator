@@ -1,4 +1,4 @@
-### React Calculator application.
+### Math-Magician application.
 
 ## Description
 
