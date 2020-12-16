@@ -2,7 +2,7 @@
 
 ## Description
 
-The project builds writes units tests for the [Math-magician website](https://shielded-woodland-93921.herokuapp.com/), using jest snapshot and react testing library.
+The project writes units tests for the [Math-magician website](https://shielded-woodland-93921.herokuapp.com/), using jest snapshot and react testing library.
 
 
 ## Built with
