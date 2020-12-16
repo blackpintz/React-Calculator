@@ -6,6 +6,7 @@ const Display = ({ result, display }) => (
   <div className="Display">
     <h1>
       {result === null ? display : result }
+      What's up
     </h1>
   </div>
 );
