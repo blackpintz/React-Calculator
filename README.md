@@ -1,8 +1,8 @@
-### React Calculator application.
+### Math-Magician application.
 
 ## Description
 
-The project builds  a calculator for Math-magicians Inc using create-react-app. In this milestone, I tied the calculations module with the components and added the interaction to the buttons.
+The project writes units tests for the [Math-magician website](https://shielded-woodland-93921.herokuapp.com/), using jest snapshot and react testing library.
 
 
 ## Built with
@@ -28,6 +28,9 @@ To get a local copy up and running follow these simple example steps.
 - Run ```npm install``` to install dependencies in package.json.
 - Run ```npm start``` and view the page on your localhost.
 
+## Run Tests
+
+- Use ```npm test```.
 
 ## Author
 

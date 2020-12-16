@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import '../App.css';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import Calculator from '../logic/calculate';
+import Home from './Home';
+import Quote from './Quote';
+import Navbar from './Nav';
 
 class App extends Component {
   constructor(props) {
@@ -48,10 +52,21 @@ class App extends Component {
   render() {
     const { next, total, display } = this.state;
     return (
-      <div className="calc-body">
-        <Display result={next === null ? total : next} display={display} />
-        <ButtonPanel clickBtn={this.handleClick} />
-      </div>
+      <>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/quote">
+          <Quote />
+        </Route>
+        <Route exact path="/calculator">
+          <Navbar />
+          <div className="calc-body">
+            <Display result={next === null ? total : next} display={display} />
+            <ButtonPanel clickBtn={this.handleClick} />
+          </div>
+        </Route>
+      </>
     );
   }
 }
