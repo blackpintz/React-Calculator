@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Quote from '../components/Quote';
 import renderer from 'react-test-renderer';
-
+import Quote from '../components/Quote';
 
 test('first snapshot test', () => {
   const component = renderer.create(
-    <BrowserRouter><Quote /></BrowserRouter>
+    <BrowserRouter><Quote /></BrowserRouter>,
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
