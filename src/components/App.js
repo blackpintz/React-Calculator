@@ -51,7 +51,6 @@ class App extends Component {
 
   render() {
     const { next, total, display } = this.state;
-    console.log(Calculator({ total: '3', next: '4', operation: '*' }, '='));
     return (
       <>
         <Route exact path="/">
